@@ -1,7 +1,7 @@
 #!/bin/bash
 echo 'パスワードマネージャーへようこそ！'
 
-while True
+while true
 do
 
     echo -n '次の選択肢から入力してください(Add Password/Get Password/Exit):'
