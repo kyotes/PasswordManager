@@ -1,18 +1,21 @@
 #!/bin/bash
 echo 'パスワードマネージャーへようこそ！'
+echo '設定したパスフレーズを入力してください'
+#パスフレーズの読み込み
+read passphrase
 
 while true
 do
 
     echo -n '次の選択肢から入力してください(Add Password/Get Password/Exit):'
-    read key
+    read action
     echo
 
-    if [ "$key" = "Add Password" ]; then
+    if [ "$action" = "Add Password" ]; then
         source Addpassword.sh
-    elif [ "$key" = "Get Password" ]; then
+    elif [ "$action" = "Get Password" ]; then
         source Getpassword.sh
-    elif [ "$key" = "Exit" ]; then
+    elif [ "$action" = "Exit" ]; then
         echo 'Thank you!'
         break
     else
