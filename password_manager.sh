@@ -1,8 +1,7 @@
 #!/bin/bash
+
 echo 'パスワードマネージャーへようこそ！'
-echo '設定したパスフレーズを入力してください'
-#パスフレーズの読み込み
-read passphrase
+source Decryption.sh
 
 while true
 do
@@ -24,3 +23,8 @@ do
     fi
 
 done
+
+#入力したパスフレーズを用いて、パスワードを暗号化
+gpg --passphrase $passphrase --batch --yes -c pass.txt
+#一時ファイルの削除
+rm pass.txt
